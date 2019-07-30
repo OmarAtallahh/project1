@@ -61,7 +61,7 @@ About BCR
         <div class="col-xl-9 col-lg-10 mx-auto">
           <div class="bg-faded rounded p-5">
             <h2 class="section-heading mb-4">
-              <span class="section-heading-upper">الصفحة الشخصية  </span>
+              <span class="section-heading-upper">  الصفحة الشخصية للمستخدم </span>
             </h2>
             <p>
 يتم عرض جميع البيانات المتعلقة بك في هذه الصفحة 

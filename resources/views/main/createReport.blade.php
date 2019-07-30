@@ -19,12 +19,11 @@ About BCR
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+          <li><a href="/posts"> المجتمع </a></li>
+          <li><a href="/articles"> المقالات </a></li>
         <li><a href="#about"> الاحصائيات </a></li>
-        <li><a href="/main/TestData"> شخص نفسك</a></li>
+        <li><a href="/main/TestData"> الأبحاث</a></li>
         <li><a href="/main/about"> حول </a></li>
-
-
-
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المزيد <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -43,7 +42,7 @@ About BCR
          <div class="col-md-offset-11 ">
     
              <ul class="nav navbar-nav navbar-right">
-         <li class="active"><a href="/">تسجيل خروج <span class="sr-only">(current)</span></a></li>
+         <li class="active"><a href="/logout">تسجيل خروج <span class="sr-only">(current)</span></a></li>
     </ul>
   </div>
 </div>

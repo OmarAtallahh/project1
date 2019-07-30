@@ -1,7 +1,0 @@
-Merge branch 'master' of https://github.com/OmarJAhmad/cancer
-
-# Conflicts:
-#	database/migrations/2019_02_19_101023_create_admins_table.php
-#	database/migrations/2019_07_19_101531_create_doctors_table.php
-#	resources/views/admin/index.blade.php
-#	resources/views/main/articles/show.blade.php

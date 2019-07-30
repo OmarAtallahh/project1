@@ -22,7 +22,7 @@ Article {{ $article->title }}
           <li><a href="/posts"> المجتمع </a></li>
           <li><a href="/articles"> المقالات </a></li>
         <li><a href="#about"> الاحصائيات </a></li>
-        <li><a href="/main/TestData"> شخص نفسك</a></li>
+        <li><a href="/main/TestData"> الأبحاث</a></li>
         <li><a href="/main/about"> حول </a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المزيد <span class="caret"></span></a>
@@ -42,7 +42,7 @@ Article {{ $article->title }}
          <div class="col-md-offset-11 ">
     
              <ul class="nav navbar-nav navbar-right">
-         <li class="active"><a href="/">تسجيل خروج <span class="sr-only">(current)</span></a></li>
+         <li class="active"><a href="/logout">تسجيل خروج <span class="sr-only">(current)</span></a></li>
     </ul>
   </div>
 </div>
@@ -78,14 +78,9 @@ Article {{ $article->title }}
 
         <hr>
 
-<<<<<<< HEAD
-        <!-- Preview Image -->
-        <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-=======
         @if($article->image)
->>>>>>> b7c8c6ae24cc77bf1909fb434ee45b5dd48e9088
 
-          <img class="img-fluid rounded" src="{{ asset($article->image) }}" alt="">
+          <img src="{{ asset($article->image) }}" alt="" width="720" height="400">
         @else
         <!-- Preview Image -->
           <img class="img-fluid rounded" src="http://placehold.it/500x300" alt="">

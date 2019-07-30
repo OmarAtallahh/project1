@@ -10,7 +10,6 @@ Articles
 </script>
 @endsection
 @section('content')
-<!-- Page Content -->
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
@@ -28,7 +27,7 @@ Articles
           <li><a href="/posts"> المجتمع </a></li>
           <li><a href="/articles"> المقالات </a></li>
         <li><a href="#about"> الاحصائيات </a></li>
-        <li><a href="/main/TestData"> شخص نفسك</a></li>
+        <li><a href="/main/TestData"> الأبحاث</a></li>
         <li><a href="/main/about"> حول </a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المزيد <span class="caret"></span></a>
@@ -48,7 +47,7 @@ Articles
          <div class="col-md-offset-11 ">
     
              <ul class="nav navbar-nav navbar-right">
-         <li class="active"><a href="/">تسجيل خروج <span class="sr-only">(current)</span></a></li>
+         <li class="active"><a href="/logout">تسجيل خروج <span class="sr-only">(current)</span></a></li>
     </ul>
   </div>
 </div>
@@ -81,7 +80,7 @@ Articles
               <textarea name="body" class="form-control"></textarea>
 
             </div>
-
+            
             <div class="form-group">
 
               <input type="file" class="form-control" name="image">

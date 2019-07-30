@@ -78,7 +78,7 @@ class UserAuth extends Controller {
 		if ($user and Hash::check($request->password, $user->password)) {
 
 			auth('web')->login($user);
-			return view('main.index')->with('success', 'Logged IN');
+			return view('main.UserMain')->with('success', 'Logged IN');
 		}
 
 		$doctor = Doctor::whereEmail($email)->first();
@@ -86,7 +86,7 @@ class UserAuth extends Controller {
 		if ($doctor and Hash::check($request->password, $doctor->password)) {
 
 			auth('doctor')->login($doctor);
-			return view('main.index')->with('success', 'Logged IN');
+			return view('main.patients')->with('success', 'Logged IN');
 		}
 
 		return back()->with('error', 'Invalid Data');
