@@ -16,7 +16,17 @@
         <div class="container">
             <div class="pull-left">
                 <a href="">
-                  <img height="55px" width="100px" src="/interface/img/logoBCR.png">
+                  @if(auth('web')->check())
+
+
+                    <a class="nav-link" style="color:#fff;text-decoration: none" href="">
+                      {{ auth('web')->user()->first_name . ' '.auth('web')->user()->last_name }}
+                    </a>
+                @elseif(auth('doctor')->check())
+                    <a class="nav-link" style="color:#fff;text-decoration: none" href="">
+                      {{ auth('doctor')->user()->first_name . ' '.auth('doctor')->user()->last_name }}
+                    </a>
+                @endif
                 </a>
             </div>
             <div class="pull-right">

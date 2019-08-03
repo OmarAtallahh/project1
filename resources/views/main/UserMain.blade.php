@@ -40,7 +40,7 @@ About BCR
       <div class="container">
         <div class="row">
          <div class="col-md-offset-11 ">
-    
+
              <ul class="nav navbar-nav navbar-right">
          <li class="active"><a href="/logout">تسجيل خروج <span class="sr-only">(current)</span></a></li>
     </ul>
@@ -64,9 +64,9 @@ About BCR
               <span class="section-heading-upper">  الصفحة الشخصية للمستخدم </span>
             </h2>
             <p>
-يتم عرض جميع البيانات المتعلقة بك في هذه الصفحة 
+يتم عرض جميع البيانات المتعلقة بك في هذه الصفحة
         </p>
-       
+
           </div>
         </div>
       </div>
