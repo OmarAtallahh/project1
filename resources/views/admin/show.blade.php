@@ -82,8 +82,8 @@ About BCR
               <dd>{{$doctor->last_name}}</dd>
               <dt>البريد الإلكتروني</dt>
               <dd>{{$doctor->email}}</dd>
-              <dt>رقم المهنة</dt>
-              <dd>{{$doctor->job_id}}</dd>
+              <dt>التخصص </dt>
+              <dd>{{$doctor->section}}</dd>
               <dt>الهاتف </dt>
               <dd>{{$doctor->phone_number}}</dd>
               <dt>إسم المشفى</dt>

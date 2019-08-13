@@ -27,6 +27,8 @@ Route::group(['middleware' => 'notauth'], function () {
 
 	Route::get('/doctor/register', 'UserAuth@getDoctorRegister')->name('doctor_register');
 	Route::post('/doctor/register', 'UserAuth@doctor_register')->name('doctor_register');
+	Route::view('/view_doctors','main/viewDoctors');
+
 
 });
 
@@ -37,7 +39,8 @@ Route::group(['middleware' => 'user'], function () {
 	
 // Route::get('/main','MainController@index');
 Route::get('/main/about', 'MainController@tow');
-Route::get('/main/TestData', 'MainController@four');
+Route::get('/main/UserMain', 'MainController@four');
+
 
 // Route::get('/main/index','MainController@interface');
 /*-------------------------------------------------------------------------*/

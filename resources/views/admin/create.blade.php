@@ -122,22 +122,15 @@ About BCR
                       </div>
 
                   </div>
-                  <div class="form-group">
-                      <select required class="form-control" name="country_id" id="country_id" placeholder="country_id">
-                        <option value=""> الدولة </option>
-                        @foreach($countries as $c)
-                            <option  {{$c->id==old('country_id')?"selected":""}} value="{{$c->id}}">{{$c->country_name}}</option>
-                        @endforeach
-                      </select>
-                  </div>
+              
                   <div class="form-group">
                       <input type="text" class="form-control" value="{{old('phone_number')}}"
                        name="phone_number" id="phone_number" placeholder="رقم الهاتف">
                   </div>
                 
                   <div class="form-group">
-                      <input type="text" class="form-control" value="{{old('job_id')}}"
-                       name="job_id" id="job_id" placeholder="رقم المهنة">
+                      <input type="text" class="form-control" value="{{old('section')}}"
+                       name="section" id="section" placeholder="التخصص">
                   </div>
                   <div class="form-group">
                       <input type="text" class="form-control" value="{{old('hospital_name')}}"

@@ -48,8 +48,7 @@ class AdminController extends Controller
             'last_name' => 'required|max:20',
             'email' => 'required|max:50|email',
             'password' => 'required|max:100',
-            'country_id' => 'required',
-            'job_id' => 'required',
+            'section' => 'required',
             'phone_number' => 'required',
             'hospital_name' => 'required',
         ]);
@@ -68,14 +67,13 @@ class AdminController extends Controller
        $doctors->first_name = $request["first_name"];
        $doctors->last_name = $request["last_name"];
        $doctors->email = $request["email"];
-       $doctors->country_id = $request["country_id"];
        $doctors->password = bcrypt($request["password"]);
-       $doctors->job_id = $request["job_id"];
+       $doctors->section = $request["section"];
        $doctors->phone_number = $request["phone_number"];
        $doctors->hospital_name = $request["hospital_name"];
        $doctors->save();
 
-     Session::flash("msg","s: Doctor Account created successfully");
+     Session::flash("msg","s: تم إضافة حساب طبيب جديد بنجاح ");
      return redirect("/admin/admin/create");
     }
       
@@ -122,8 +120,7 @@ class AdminController extends Controller
           'last_name' => 'required|max:20',
           'email' => 'required|max:50|email',
           'password' => 'required|max:100',
-          'country_id' => 'required',
-          'job_id' => 'required',
+          'section' => 'required',
           'phone_number' => 'required',
           'hospital_name' => 'required',
       ]);
@@ -132,14 +129,13 @@ class AdminController extends Controller
       $doctors->first_name = $request["first_name"];
       $doctors->last_name = $request["last_name"];
       $doctors->email = $request["email"];
-      $doctors->country_id = $request["country_id"];
       $doctors->password = bcrypt($request["password"]);
-      $doctors->job_id = $request["job_id"];
+      $doctors->section = $request["section"];
       $doctors->phone_number = $request["phone_number"];
       $doctors->hospital_name = $request["hospital_name"];
       $doctors->save();
 
-   Session::flash("msg","s: Doctor Account updated successfully");
+   Session::flash("msg","s: تم تحديث البيانات بنجاح");
    return redirect("/admin/admin");
 
     }

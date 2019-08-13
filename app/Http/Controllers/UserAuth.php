@@ -37,7 +37,7 @@ class UserAuth extends Controller {
 
 		auth('web')->login($user);
 
-		return view('main.index')->with('success', 'Logged In');
+		return view('main.UserMain')->with('success', 'Logged In');
 	}
 
 	function doctor_register(Request $request) {
@@ -62,7 +62,7 @@ class UserAuth extends Controller {
 
 		auth('doctor')->login($user);
 
-		return view('main.index')->with('success', 'Logged In');
+		return view('main.patients')->with('success', 'Logged In');
 	}
 
 	function getLogin(Request $request) {

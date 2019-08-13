@@ -90,7 +90,7 @@ About BCR
                     <th>الاسم الاول </th>
                     <th>الاسم الأخير</th>
                     <th>البريد الإلكتروني </th>
-                    <th>رقم المهنة </th>
+                    <th>التخصص</th>
                     <th>رقم الهاتف </th>
                     <th>إسم المشفى</th>
                     <th width="10%"></th>
@@ -106,7 +106,7 @@ About BCR
                     <td>{{$a->first_name}}</td>
                     <td>{{$a->last_name}}</td>
                     <td>{{$a->email}}</td>
-                    <td>{{$a->job_id}}</td>
+                    <td>{{$a->section}}</td>
                     <td>{{$a->phone_number}}</td>
                     <td>{{$a->hospital_name}}</td>
                     <td width="10%">

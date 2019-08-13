@@ -1,0 +1,27 @@
+@font-face {
+    font-family: fontArabic;
+    src: url('../fonts/Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf');
+}
+
+* {
+    font-family: 'fontArabic';
+}
+
+body {
+    min-height: 100vh;
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-position: right;
+}
+
+.formFather {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

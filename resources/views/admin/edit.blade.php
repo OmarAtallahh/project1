@@ -109,16 +109,7 @@ About BCR
                               placeholder="Password">
                           </div>
                       </div>
-                      <div class="form-group">
-                        <label class="form_controls">الدولة</label>
-                          <select class="form-control" name="country_id" id="country_id"
-                          placeholder="country_id">
-                            <option> إختيار الدولة </option>
-                            @foreach($countries as $c)
-                                <option  {{$c->id == $doctor->country_id ?"selected":""}} value="{{$c->id}}">{{$c->country_name}}</option>
-                            @endforeach $c->id == $doctor->country_id
-                          </select>
-                      </div>
+                     
 
                       <div class="form-group">
                         <label class="form_controls">الهاتف </label>
@@ -127,9 +118,9 @@ About BCR
                       </div>
 
                       <div class="form-group">
-                        <label class="form_controls">رقم المهنة </label>
-                          <input type="text" class="form-control" value="{{$doctor->job_id}}"
-                           name="job_id" id="job_id" placeholder="job_id">
+                        <label class="form_controls">التخصص </label>
+                          <input type="text" class="form-control" value="{{$doctor->section}}"
+                           name="section" id="section" placeholder="التخصص">
                       </div>
                       <div class="form-group">
                         <label class="form_controls">إسم المشفى </label>

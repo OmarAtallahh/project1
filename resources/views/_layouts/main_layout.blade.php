@@ -20,6 +20,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <!-- BEGIN HEAD -->
 
     <head>
+
         <meta charset="utf-8" />
         <title>@yield("titel")</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,6 +50,7 @@ License: You must have a valid license purchased only from themeforest(the above
             <link rel="stylesheet" href="{{ asset('/') }}css//bootstrap-rtl.min.css">
             <link rel="stylesheet" href="{{ asset('/') }}css/rtl.css">
             <link href="https://fonts.googleapis.com/css?family=Cairo:300,400,600&amp;subset=arabic,latin-ext" rel="stylesheet">
+            <link href="/new/web.css">
         @endif
 
 
@@ -101,6 +103,17 @@ License: You must have a valid license purchased only from themeforest(the above
                 {
                     $('#radio1003').attr('checked', 'checked');
                 });
+
+                $('.faEdit').click(function() {
+                  $('.faEdit').fadeOut(500);
+                  $('.faCheck').delay(500).fadeIn(500);
+                });
+
+                $('.faCheck').click(function() {
+                  $('.faCheck').fadeOut(500);
+                  $('.faEdit').delay(500).fadeIn(500);
+                });
+
             })
         </script>
 

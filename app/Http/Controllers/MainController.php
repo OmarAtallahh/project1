@@ -23,9 +23,13 @@ class MainController extends Controller
   // }
   public function four()
   {
-      return view("main.TestData");
+      return view("main.UserMain");
   }
-
+  public function doctors()
+  {
+      return view("main.viewDoctors");
+  }
+  
   // public function interface()
   // {
   //     return view("main.index");

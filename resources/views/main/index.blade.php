@@ -1,113 +1,90 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ar">
 
-<head>
+    <head>
+        <title>main</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/interface/neww/Untitled/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/interface/neww/Untitled/css/bootstrap-rtl.css" />
+        <link rel="stylesheet" href="/interface/neww/Untitled/css/main.css" />
+    </head>
 
-    <meta charset="utf-8">
-    <title>Name title Bar</title>
-    <link rel="stylesheet" href="/interface/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/interface/css/main.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-</head>
+    <body>
 
-<body>
-    <nav id="global-nav" class="nav">
-        <div class="container">
-            <div class="pull-right">
-                @if(auth('web')->check())
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img
+                        src="/interface/neww/Untitled/img/logo.png"
+                        width="100">
+                </a>
+                <button class="navbar-toggler" type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
+                <div class="collapse navbar-collapse"
+                    id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                          
 
-                    <a class="nav-link" style="color:#fff;text-decoration: none" href="">
-                      {{ auth('web')->user()->first_name . ' '.auth('web')->user()->last_name }}
-                    </a>
-                @elseif(auth('doctor')->check())
-                    <a class="nav-link" style="color:#fff;text-decoration: none" href="">
-                      {{ auth('doctor')->user()->first_name . ' '.auth('doctor')->user()->last_name }}
-                    </a>
-                @endif
-            </div>
-            <div class="pull-right">
-              <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                <!--  <li><a href="/main/statistics"> BCR Statistics </a></li>
-                    <li><a href="/main/TestData"> Predict BCR </a></li>
-                    <li><a href="/main/about"> about Predict me</a></li>
-                -->
-                <li><a href="/login" class="btn btn-secondary"> تسجيل دخول</a></li>
-
-                <li><a href="/doctor/register" class="btn btn-secondary"> إنشاء حساب طبيب </a></li>
-                <li><a href="/register" class="btn btn-secondary"> إنشاء حساب مستخدم  </a></li>
-                </ul>
-
-                @if(auth('web')->check())
-
-                    <ul class="nav navbar-nav">
-
-                        <li><a href="/posts" class="btn btn-secondary"> المجتمع </a></li>
-                        <li><a href="/articles" class="btn btn-secondary"> المقالات </a></li>
-
-                        <li><a href="/logout" class="btn btn-secondary"> تسجيل خروج </a></li>
-
+                            
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">حول</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> سياسة الخصوصوية  </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" a href="#">شروط الاستخدام</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-warning nav-link" href="/login">
+                                    الانضمام لنا 
+                            </a>
+                        </li>
                     </ul>
-
-                @elseif(auth('doctor')->check())
-
-                <ul class="nav navbar-nav">
-                 <!--   <li><a href="/admin/login" class="btn btn-secondary"> Login As Admin </a></li>-->
-
-                    <li><a href="/login" class="btn btn-secondary"> تسجيل دخول</a></li>
-
-                    <li><a href="/doctor/register" class="btn btn-secondary"> أنشاءحساب طبيب </a></li>
-                    <li><a href="/register" class="btn btn-secondary"> إنشاء حساب مستخدم  </a></li>
-
-                </ul>
-
-                @else
-
-
-                @endif
+                </div>
             </div>
-          </div>
-        </div>
-    </nav>
-    <br><br><br>
+        </nav>
+        
 
-    <div class="container">
-  </div>
-
-    <div class="hero-section">
-        <div class="container">
-            <div class="hero-text">
-                <h1>BCR Statistics</h1>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                   there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
-                    the Semantics, a large language ocean.</p>
+        <div class="container conAll">
+            <div class="row">
+                <div class="offset-lg-7 col-lg-5 formFather py-lg-5 py-2">
+                        <form class="form1" method="POST" action="{{ route('login') }}">
+                                {{ csrf_field() }}
+                        <div class="form-group">
+                            <input autocomplete="off" name="email" type="email"
+                                class="form-control"
+                                id="exampleInputEmail1"
+                                aria-describedby="emailH"
+                                placeholder="البريد الإلكتروني">
+                        </div>
+                        <div class="form-group">
+                            <input autocomplete="off" name="password" type="password"
+                                class="form-control"
+                                id="exampleInputPassword1"
+                                placeholder="كلمة المرور">
+                        </div>
+                        <div class="form-group">
+                            <a href="">هل نسيت كلمة المرور ؟</a>
+                        </div>
+                        <button type="submit" value="Sign in" class="btn btn-primary">تسجيل دخول </button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="content-section">
-        <div class="container">
-            <div class="content-text">
-                <h1>Predict BCR</h1>
-                <p>A small river named Duden flows by their place and supplies it with the necessary
-                   regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-                   into your mouth. Even the all-powerful Pointing has no control about the blind texts
-                   it is an almost unorthographic life.</p>
-            </div>
-        </div>
-    </div>
-
-
-
-    <script src="/interface/js/jquery.min.js"></script>
-    <script src="/interface/js/bootstrap.min.js"></script>
-    <script src="/interface/js/main.js"></script>
-
-</body>
-
-
+        <script src="/interface/neww/Untitled/js/jquery.min.js"></script>
+        <script src="/interface/neww/Untitled/js/popper.min.js"></script>
+        <script src="/interface/neww/Untitled/js/bootstrap.min.js"></script>
+        <script src="/interface/neww/Untitled/js/main.js"></script>
+    </body>
 
 </html>
