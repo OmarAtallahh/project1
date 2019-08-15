@@ -57,7 +57,6 @@ class UserAuth extends Controller {
 
 		$data['password'] = bcrypt($data['password']);
 
-		
 		$user = Doctor::create($data);
 
 		auth('doctor')->login($user);
@@ -78,7 +77,7 @@ class UserAuth extends Controller {
 		if ($user and Hash::check($request->password, $user->password)) {
 
 			auth('web')->login($user);
-			return view('main.UserMain')->with('success', 'Logged IN');
+			return redirect('/main/UserMain')->with('success', 'Logged IN');
 		}
 
 		$doctor = Doctor::whereEmail($email)->first();
@@ -86,7 +85,7 @@ class UserAuth extends Controller {
 		if ($doctor and Hash::check($request->password, $doctor->password)) {
 
 			auth('doctor')->login($doctor);
-			return view('main.patients')->with('success', 'Logged IN');
+			return redirect('/articles')->with('success', 'Logged IN');
 		}
 
 		return back()->with('error', 'Invalid Data');

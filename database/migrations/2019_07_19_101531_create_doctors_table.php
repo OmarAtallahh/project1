@@ -19,8 +19,10 @@ class CreateDoctorsTable extends Migration {
 			$table->string('email')->unique();
 			$table->bigInteger('job_id');
 			$table->integer('country_id');
-			$table->bigInteger('phone_number');
+			$table->bigInteger('phone_number')->nullable();
 			$table->string('hospital_name', 100);
+			$table->text('about')->nullable();
+			$table->string('image')->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});

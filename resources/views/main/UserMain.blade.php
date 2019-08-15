@@ -20,7 +20,7 @@ About BCR
 
      @else
      <a class="navbar-brand" href="/doctor">الرئيسية</a>
-     
+
      @endif
     </div>
     <div id="navbar" class="navbar-collapse collapse">
@@ -49,7 +49,7 @@ About BCR
             <div class="dropdown">
                 <button class="dropDownCss btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     @if(auth('web')->check())
-                    
+
                     <a class="nav-link" style="color:#000;text-decoration: none" href="">
                       {{ auth('web')->user()->name }}
                     </a>
@@ -67,8 +67,8 @@ About BCR
                   </li>
                 </ul>
               </div>
-    
-             
+
+
         </div>
       </div>
       </div>
@@ -108,16 +108,16 @@ About BCR
                                   </li>
                                   @if(auth('web')->check())
                                             <li>
-                                                <a href="javascript:;"> عدد المنشورات 
+                                                <a href="javascript:;"> عدد المنشورات
                                                     <span> 3 </span>
                                                 </a>
                                             </li>
                                     @else
                                             <li>
-                                                <a href="javascript:;"> عدد المقالات 
+                                                <a href="javascript:;"> عدد المقالات
                                                     <span> 3 </span>
                                                 </a>
-                                                
+
                                             </li>
                                     @endif
                                   <li>
@@ -145,7 +145,7 @@ About BCR
                                       <p>
                                           <a href="javascript:;"> www.mywebsite.com </a>
                                       </p>
-                                     
+
                                   </div>
                                   <!--end col-md-8-->
                               </div>
@@ -153,8 +153,8 @@ About BCR
                           </div>
                           <script>
 
-                            var button = document.getElementById("editID"); 
-                            var input = document.getElementById("textareaID"); 
+                            var button = document.getElementById("editID");
+                            var input = document.getElementById("textareaID");
 
                             button.addEventListener("click", function(){
                               input.toggleAttribute("disabled");
@@ -166,7 +166,7 @@ About BCR
                             }
 
                             button.addEventListener('click', classToggle);
-                          
+
                           </script>
                       </div>
                   </div>
@@ -180,66 +180,96 @@ About BCR
                                           <i class="fa fa-cog"></i> المعلومات الشخصية  </a>
                                       <span class="after"> </span>
                                   </li>
-                                 
+
                                   <li>
                                       <a data-toggle="tab" href="#tab_3-3">
                                           <i class="fa fa-lock"></i> تغيير كلمة المرور</a>
                                   </li>
-                                        
+
                               </ul>
                           </div>
                           <div class="col-md-9">
                               <div class="tab-content">
                                   <div id="tab_1-1" class="tab-pane active">
-                                      <form role="form" action="#">
+                                      <form enctype="multipart/form-data" role="form" action="{{ route('update_data') }}" method="POST">
+
+                                        @csrf
+                                        @method('PUT')
+
+                                        @if(auth('doctor')->check())
+
                                           <div class="form-group">
-                                              <label class="control-label">الاسم الاول </label>
-                                              <input type="text" placeholder="John" class="form-control" /> </div>
+                                              <label class="control-label">الاسم الاول  </label>
+                                              <input type="text" value="{{ $user->first_name }}" name="first_name" placeholder="John" class="form-control" />
+                                            </div>
+
+
                                           <div class="form-group">
-                                              <label class="control-label">الاسم الثاني</label>
-                                              <input type="text" placeholder="Doe" class="form-control" /> </div>
+                                              <label class="control-label">الاسم  الثانى</label>
+                                              <input type="text" value="{{ $user->last_name }}" name="last_name" placeholder="John" class="form-control" />
+                                            </div>
+
+
                                           <div class="form-group">
                                               <label class="control-label">رقم الهاتف</label>
-                                              <input type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control" /> </div>
-                                          <div class="form-group">
-                                              <label class="control-label">Interests</label>
-                                              <input type="text" placeholder="Design, Web etc." class="form-control" /> </div>
+                                              <input value="{{ $user->phone_number }}" name="phone_number" type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control" />
+                                            </div>
+
                                           <div class="form-group">
                                               <label class="control-label">التخصص</label>
-                                              <input type="text" placeholder="Web Developer" class="form-control" /> </div>
+                                              <input type="text" name="section" value="{{ $user->section }}" placeholder="Web Developer" class="form-control" /> </div>
                                           <div class="form-group">
                                               <label class="control-label">نبذة</label>
-                                              <textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
+                                              <textarea class="form-control" name="about" rows="3" placeholder="We are KeenThemes!!!">{{ $user->about }}</textarea>
                                           </div>
+
+                                          @else
+
+                                            <div class="form-group">
+                                                <label class="control-label">الاسم  </label>
+                                                <input type="text" value="{{ $user->name }}" name="name" placeholder="John" class="form-control" />
+                                              </div>
+
+                                          @endif
+
                                           <div class="form-group">
-                                              <label class="control-label">رابط حساب فيسبوك</label>
-                                              <input type="text" placeholder="http://www.mywebsite.com" class="form-control" /> </div>
+                                              <label class="control-label"> الصورة</label>
+                                              <input type="file" name="image" class="form-control" />
+                                          </div>
+
                                           <div class="margiv-top-10">
-                                              <a href="javascript:;" class="btn green"> حفظ التعديلات </a>
-                                              <a href="javascript:;" class="btn default"> إالغاء </a>
+                                              <button type="submit" class="btn green"> حفظ التعديلات </button>
+                                              <button href="javascript:;" class="btn default"> إالغاء </button>
                                           </div>
                                       </form>
                                   </div>
-                                 
+
+
+
+
+
                                   <div id="tab_3-3" class="tab-pane">
-                                      <form action="#">
+                                      <form action="{{ route('update_password') }}" method="POST">
+                                          @csrf
+                                          @method('PUT')
+
                                           <div class="form-group">
                                               <label class="control-label">كلمة المرور الحالية</label>
-                                              <input type="password" class="form-control" /> </div>
+                                              <input type="password" name="current_password" class="form-control" /> </div>
                                           <div class="form-group">
                                               <label class="control-label">كلمة المرور الجديد</label>
-                                              <input type="password" class="form-control" /> </div>
+                                              <input type="password" name="new_password" class="form-control" /> </div>
                                           <div class="form-group">
                                               <label class="control-label">اعادة كتابة كلمة المرور الجديدة</label>
-                                              <input type="password" class="form-control" /> </div>
+                                              <input type="password" name="confirmation_password" class="form-control" /> </div>
                                           <div class="margin-top-10">
-                                              <a href="javascript:;" class="btn green"> تغيير كلمة المرور </a>
-                                              <a href="javascript:;" class="btn default"> إالغاء   </a>
+                                              <button type="submit" class="btn green"> حفظ التعديلات </button>
+                                              <button href="javascript:;" class="btn default"> إالغاء </button>
                                           </div>
                                       </form>
                                   </div>
                                   <div id="tab_4-4" class="tab-pane">
-                                     
+
                                   </div>
                               </div>
                           </div>
@@ -818,4 +848,3 @@ About BCR
   </div>
 </section>
 @endsection
-    

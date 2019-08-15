@@ -13,7 +13,7 @@ class Doctor extends Authenticatable {
 	protected $appends = ['name'];
 
 	protected $fillable = [
-		'first_name', 'email', 'password', 'last_name', 'phone_number', 'hospital_name', 'job_id', 'created_by', 'updated_by',
+		'first_name', 'email', 'password', 'last_name', 'phone_number', 'hospital_name', 'job_id', 'created_by', 'updated_by', 'image', 'about',
 	];
 
 	public function getNameAttribute() {
