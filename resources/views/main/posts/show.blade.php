@@ -16,10 +16,10 @@
         <!-- this route take u to /main/patients -->
         @if(auth('web')->check())
        <a class="navbar-brand" href="/main/UserMain">الرئيسية</a>
-  
+
        @else
        <a class="navbar-brand" href="/doctor">الرئيسية</a>
-       
+
        @endif
       </div>
       <div id="navbar" class="navbar-collapse collapse">
@@ -48,7 +48,7 @@
               <div class="dropdown">
                   <button class="dropDownCss btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       @if(auth('web')->check())
-                      
+
                       <a class="nav-link" style="color:#000;text-decoration: none" href="">
                         {{ auth('web')->user()->name }}
                       </a>
@@ -66,13 +66,13 @@
                     </li>
                   </ul>
                 </div>
-      
-               
+
+
           </div>
         </div>
         </div>
-  
-  
+
+
       </div><!--/.nav-collapse -->
     </div>
   </nav>
@@ -89,18 +89,34 @@
         <h1 class="mt-4"> {{ $post->title }}</h1>
 
         <!-- Author -->
-        
+
         </p>
 
         <hr>
 
         <!-- Date/Time -->
-        
+
         <p> تم النشر بتاريخ {{ $post->created_at }}</p>
         <p class="lead">
-          بواسطة 
+          بواسطة
 
           <a href="#">{{ $post->user->name  }}</a>
+
+
+          @php
+
+            $user_id = auth('doctor')->id() ?? auth('web')->id();
+
+          @endphp
+
+          @if($post->user_id == $user_id)
+
+          <form method="POST" style="display: inline-block" action="{{ route('posts.destroy' , $post) }}">
+                  @csrf
+                  @method('DELETE')
+                  <button style="margin: 60px 0px;" type="submit" class="btn btnDeletCss btn-warning"><i class="fa fa-trash"></i></button>
+                </form>
+          @endif
 
         <hr>
 
@@ -114,7 +130,7 @@
           <img class="img-fluid rounded" src="http://placehold.it/500x300" alt="">
         @endif
 
-              
+
 
         <!-- Post Content -->
         <p class="lead">{!! $post->body !!}</p>
@@ -137,21 +153,31 @@
         </div>
 
         @forelse($post->comments()->take(3) as $comment)
-	        <div class="media mb-4">
-	          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-	          <div class="media-body">
-	            <h5 class="mt-0">{{ $comment->user()->first_name . ' ' . $comment->user()->last_name }}
-	            	<form method="POST" style="display: inline-block" action="{{ route('post-comments.destroy' , $comment) }}">
-	            		@csrf
-	            		@method('DELETE')
-	            		<button type="submit" class="btn btn-warning"><i class="fa fa-trash"></i></button>
-	            	</form>
+          <div class="media commentCss mb-4">
+            <img class="imgUserCss d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+            <span class="nameCss">
+                {{ $comment->user()->name }} : {{ $comment->created_at->diffForHumans() }}
+            </span>
+            <span class="comCss">
+                {{ $comment->body }}
+            </span>
+            <div class="media-body">
+              <h5>
 
-	            </h5>
-	            {{ $comment->body }}
-	          </div>
-	        </div>
-	    @empty
+                @if($comment->user_id == $user_id)
+
+                <form method="POST" style="display: inline-block" action="{{ route('post-comments.destroy' , $comment) }}">
+                  @csrf
+                  @method('DELETE')
+                  <button type="submit" class="btn btnDeletCss btn-warning"><i class="fa fa-trash"></i></button>
+                </form>
+
+                @endif
+
+              </h5>
+            </div>
+          </div>
+      @empty
 
         @endforelse
 

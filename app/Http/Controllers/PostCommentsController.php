@@ -30,7 +30,11 @@ class PostCommentsController extends Controller {
 		$comment = new PostComment();
 
 		$comment->body = request('body');
-		$comment->user_id = auth()->id();
+		if (auth('doctor')->check()) {
+			$comment->user_id = auth('doctor')->id();
+		} elseif (auth('web')->check()) {
+			$comment->user_id = auth('web')->id();
+		}
 
 		if (auth('doctor')->check()) {
 

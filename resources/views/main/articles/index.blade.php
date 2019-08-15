@@ -21,10 +21,10 @@ Articles
         <!-- this route take u to /main/patients -->
         @if(auth('web')->check())
        <a class="navbar-brand" href="/main/UserMain">الرئيسية</a>
-  
+
        @else
        <a class="navbar-brand" href="/doctor">الرئيسية</a>
-       
+
        @endif
       </div>
       <div id="navbar" class="navbar-collapse collapse">
@@ -53,7 +53,7 @@ Articles
               <div class="dropdown">
                   <button class="dropDownCss btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       @if(auth('web')->check())
-                      
+
                       <a class="nav-link" style="color:#000;text-decoration: none" href="">
                         {{ auth('web')->user()->name }}
                       </a>
@@ -71,13 +71,13 @@ Articles
                     </li>
                   </ul>
                 </div>
-      
-               
+
+
           </div>
         </div>
         </div>
-  
-  
+
+
       </div><!--/.nav-collapse -->
     </div>
   </nav>
@@ -104,7 +104,7 @@ Articles
               <textarea name="body" class="form-control"></textarea>
 
             </div>
-            
+
             <div class="form-group">
 
               <input type="file" class="form-control" name="image">
@@ -130,7 +130,7 @@ Articles
         <!-- Blog Post -->
           <div class="card mb-4">
             @if($article->image)
-            <img class="card-img-top" src="{{ asset('image/' . $article->image) }}" alt="Card image cap" width="700" height="400">
+            <img class="card-img-top" src="{{ asset($article->image) }}" alt="Card image cap" width="700" height="400">
             @else
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             @endif
@@ -160,7 +160,7 @@ Articles
 
         <!-- Search Widget -->
         <div class="card my-4">
-         
+
           <div class="card-body">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="البحث عن ...">

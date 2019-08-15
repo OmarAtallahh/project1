@@ -41,7 +41,7 @@ class ArticlesController extends Controller {
 		$data = request()->validate([
 			'title' => 'required|unique:articles,title|string|min:3|max:32',
 			'body' => [
-				'required', 'string', 'min:3', 
+				'required', 'string', 'min:3',
 			],
 
 			'image' => 'nullable|max:1999|image',
@@ -157,12 +157,9 @@ class ArticlesController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy(Article $article) {
-		if (Sentinel::getUser()->id !== $article->admin_id) {
-			return redirect('/articles')->with('error', 'Unauthorized Page');
-		}
 
-		if ($article->imagePath) {
-			File::delete('images/' . $article->imagePath);
+		if ($article->image) {
+			File::delete($article->image);
 		}
 
 		$article->delete();

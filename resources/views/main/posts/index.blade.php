@@ -10,7 +10,7 @@ Posts
    $('.textarea').wysihtml5();
 </script>
 @endsection
- 
+
 
 @section('content')
 <!-- Page Content --><nav class="navbar navbar-default navbar-fixed-top">
@@ -25,10 +25,10 @@ Posts
         <!-- this route take u to /main/patients -->
         @if(auth('web')->check())
        <a class="navbar-brand" href="/main/UserMain">الرئيسية</a>
-  
+
        @else
        <a class="navbar-brand" href="/doctor">الرئيسية</a>
-       
+
        @endif
       </div>
       <div id="navbar" class="navbar-collapse collapse">
@@ -57,7 +57,7 @@ Posts
               <div class="dropdown">
                   <button class="dropDownCss btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       @if(auth('web')->check())
-                      
+
                       <a class="nav-link" style="color:#000;text-decoration: none" href="">
                         {{ auth('web')->user()->name }}
                       </a>
@@ -75,18 +75,18 @@ Posts
                     </li>
                   </ul>
                 </div>
-      
-               
+
+
           </div>
         </div>
         </div>
-  
-  
+
+
       </div><!--/.nav-collapse -->
     </div>
   </nav>
   <br>
-  
+
 
   <div class="container">
 
@@ -99,7 +99,7 @@ Posts
         <span> أضف منشور </span>
         <br>
         <br>
-       
+
 
         <form action="{{ route('posts.store') }}" enctype="multipart/form-data" method="POST">
           {{ csrf_field() }}
@@ -141,7 +141,7 @@ Posts
         <!-- Blog Post -->
           <div class="card mb-4">
             @if($post->image)
-            <img class="card-img-top" src="{{ asset('image/' . $post->image) }}" alt="Card image cap" width="500" height="400">
+            <img class="card-img-top" src="{{ asset( $post->image) }}" alt="Card image cap" width="500" height="400">
             @else
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             @endif

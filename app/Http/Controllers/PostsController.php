@@ -157,12 +157,9 @@ class PostsController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy(Post $post) {
-		if (Sentinel::getUser()->id !== $post->admin_id) {
-			return redirect('/posts')->with('error', 'Unauthorized Page');
-		}
 
-		if ($post->imagePath) {
-			File::delete('images/' . $post->imagePath);
+		if ($post->image) {
+			File::delete($post->image);
 		}
 
 		$post->delete();

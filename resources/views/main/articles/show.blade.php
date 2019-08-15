@@ -16,10 +16,10 @@ Article {{ $article->title }}
         <!-- this route take u to /main/patients -->
         @if(auth('web')->check())
        <a class="navbar-brand" href="/main/UserMain">الرئيسية</a>
-  
+
        @else
        <a class="navbar-brand" href="/doctor">الرئيسية</a>
-       
+
        @endif
       </div>
       <div id="navbar" class="navbar-collapse collapse">
@@ -48,7 +48,7 @@ Article {{ $article->title }}
               <div class="dropdown">
                   <button class="dropDownCss btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       @if(auth('web')->check())
-                      
+
                       <a class="nav-link" style="color:#000;text-decoration: none" href="">
                         {{ auth('web')->user()->name }}
                       </a>
@@ -66,13 +66,13 @@ Article {{ $article->title }}
                     </li>
                   </ul>
                 </div>
-      
-               
+
+
           </div>
         </div>
         </div>
-  
-  
+
+
       </div><!--/.nav-collapse -->
     </div>
   </nav>
@@ -89,6 +89,8 @@ Article {{ $article->title }}
         <div class="row">
           <!-- Title -->
           <h3 class="col-md-8 text-right my-2">{{ $article->title }}</h3>
+
+
           <!-- Date/Time -->
           <p class="col-md-4 text-left">  نشر بتاريخ {{ $article->created_at }}</p>
         </div>
@@ -97,6 +99,21 @@ Article {{ $article->title }}
         <p class="lead">
           بواسطة
           <a href="#">{{ $article->doctor->first_name . ' ' . $article->doctor->last_name  }}</a>
+
+          @php
+
+            $user_id = auth('doctor')->id() ?? auth('web')->id();
+
+          @endphp
+
+          @if($article->doctor_id == $user_id)
+
+          <form method="POST" style="display: inline-block" action="{{ route('articles.destroy' , $article) }}">
+                  @csrf
+                  @method('DELETE')
+                  <button style="margin: 42px 0px;" type="submit" class="btn btnDeletCss btn-warning"><i class="fa fa-trash"></i></button>
+                </form>
+          @endif
         </p>
 
         <hr>
@@ -134,18 +151,23 @@ Article {{ $article->title }}
 	        <div class="media commentCss mb-4">
             <img class="imgUserCss d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
             <span class="nameCss">
-                123456س
+                {{ $comment->user()->name }} : {{ $comment->created_at->diffForHumans() }}
             </span>
             <span class="comCss">
                 {{ $comment->body }}
             </span>
 	          <div class="media-body">
-	            <h5>{{ $comment->user()->first_name . ' ' . $comment->user()->last_name }}
+              <h5>
+
+                @if($comment->user_id == $user_id)
+
 	            	<form method="POST" style="display: inline-block" action="{{ route('article-comments.destroy' , $comment) }}">
 	            		@csrf
 	            		@method('DELETE')
 	            		<button type="submit" class="btn btnDeletCss btn-warning"><i class="fa fa-trash"></i></button>
 	            	</form>
+
+                @endif
 
 	            </h5>
 	          </div>
