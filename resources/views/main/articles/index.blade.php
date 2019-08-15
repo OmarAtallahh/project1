@@ -9,7 +9,8 @@ Articles
    $('.textarea').wysihtml5();
 </script>
 @endsection
-@section('content')<nav class="navbar navbar-default navbar-fixed-top">
+@section('content')
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -20,10 +21,10 @@ Articles
         </button>
         <!-- this route take u to /main/patients -->
         @if(auth('web')->check())
-       <a class="navbar-brand" href="/main/UserMain">الرئيسية</a>
+       <a class="navbar-brand" href="/main/UserMain">الشخصية</a>
 
        @else
-       <a class="navbar-brand" href="/doctor">الرئيسية</a>
+       <a class="navbar-brand" href="/doctor">الشخصية</a>
 
        @endif
       </div>
@@ -31,19 +32,17 @@ Articles
         <ul class="nav navbar-nav">
             <li><a href="/posts"> المجتمع </a></li>
             <li><a href="/articles"> المقالات </a></li>
-            <li><a href="#about"> الاحصائيات </a></li>
-            <li><a href="/main/TestData"> الأبحاث</a></li>
+            <li><a href="/statistics"> الاحصائيات </a></li>
             <li><a href="/main/about"> حول </a></li>
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المزيد <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#">أمراض </a></li>
-                <li><a href="#">أطباء</a></li>
+                <li><a href="/view_doctors">أطباء</a></li>
                 <li><a href="/main/createReport">مراسلة إدارة الموقع</a></li>
                 <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li class="dropdown-header">سياسات</li>
+                <li><a href="/privacy">سياسة الخصوصية</a></li>
+                <li><a href="/terms">شروط الاستخدام</a></li>
               </ul>
           </li>
         </ul>
@@ -119,13 +118,14 @@ Articles
 
       @endif
 
+       
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
         <h1 class="my-4">
           آخر المقالات
         </h1>
-
+<hr>
         @forelse($articles as $article)
         <!-- Blog Post -->
           <div class="card mb-4">
@@ -154,59 +154,60 @@ Articles
         </ul>
 
       </div>
+ <!-- Sidebar Widgets Column -->
+ <div class="col-md-4 offset-md-12">
 
-      <!-- Sidebar Widgets Column -->
-      <div class="col-md-4">
+    <!-- Search Widget -->
+    <div class="card my-4">
 
-        <!-- Search Widget -->
-        <div class="card my-4">
-
-          <div class="card-body">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="البحث عن ...">
-              <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">ابحث!</button>
-              </span>
-            </div>
-          </div>
+      <div class="card-body">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="بحث عن مقالة ...">
+          <span class="input-group-btn">
+            <button class="btn btn-secondary" type="button">ابحث!</button>
+          </span>
         </div>
-
-        <!-- Categories Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">التصنيفات</h5>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">طب عام</a>
-                  </li>
-                  <li>
-                    <a href="#">جلدية</a>
-                  </li>
-                  <li>
-                    <a href="#">باطنة</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">سرطان</a>
-                  </li>
-                  <li>
-                    <a href="#">ادمان</a>
-                  </li>
-                  <li>
-                    <a href="#">عيون</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
+    </div>
+
+    <!-- Categories Widget -->
+    <div class="card my-4">
+      <h5 class="card-header">التصنيفات</h5>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#">طب عام</a>
+              </li>
+              <li>
+                <a href="#">جلدية</a>
+              </li>
+              <li>
+                <a href="#">باطنة</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="#">سرطان</a>
+              </li>
+              <li>
+                <a href="#">ادمان</a>
+              </li>
+              <li>
+                <a href="#">عيون</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+    
 
     </div>
     <!-- /.row -->

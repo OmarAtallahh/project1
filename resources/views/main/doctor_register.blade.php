@@ -33,22 +33,21 @@
                           
 
                             
-                       
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">حول</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" href="#"> سياسة الخصوصوية  </a>
-                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" a href="#">شروط الاستخدام</a>
-                            </li>
-                        
-                            <li class="nav-item">
-                                    <a class="btn btn-primary href=">تسجيل دخول</a>
-    
-        
+                                    <a class="nav-link" href="main/about">حول</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/privacy"> سياسة الخصوصوية  </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" a href="/terms">شروط الاستخدام</a>
+                                </li>
+                        
+                                <li class="nav-item">
+                                        <a class="btn btn-primary" href="/">تسجيل دخول</a>
+        
+            
+                                    </li>
                        
                     </ul>
                 </div>
@@ -79,28 +78,8 @@
                                     class="form-control"
                                     placeholder="البريد الالكتروني ">
                             </div>
-                            <select  class="form-control" name="country">الدولة 
-                                    <option value="JO">الأردن</option>
-                                    <option value="AE">الامارات العربية المتحدة</option>
-                                    <option value="BH">البحرين</option>
-                                    <option value="DZ">الجزائر</option>
-                                    <option value="SD">السودان</option>
-                                    <option value="SO">الصومال</option>
-                                    <option value="IQ">العراق</option>
-                                    <option value="KW">الكويت</option>
-                                    <option value="MA">المغرب</option>
-                                    <option value="SA">المملكة العربية السعودية</option>
-                                    <option value="YE">اليمن</option>
-                                    <option value="TN">تونس</option>
-                                    <option value="SY">سوريا</option>
-                                    <option value="OM">عمان</option>
-                                    <option value="PS">فلسطين</option>
-                                    <option value="QA">قطر</option>
-                                    <option value="LB">لبنان</option>
-                                    <option value="LY">ليبيا</option>
-                                    <option value="EG">مصر</option>
-                                </select>
-                                    <br>
+                         
+                                  
 
 
                             <div class="form-group">

@@ -35,13 +35,13 @@
                             
                        
                         <li class="nav-item">
-                            <a class="nav-link" href="#">حول</a>
+                            <a class="nav-link" href="main/about">حول</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"> سياسة الخصوصوية  </a>
+                            <a class="nav-link" href="/privacy"> سياسة الخصوصوية  </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" a href="#">شروط الاستخدام</a>
+                            <a class="nav-link" a href="/terms">شروط الاستخدام</a>
                         </li>
                         <li class="nav-item">
                             <a class="btn btn-warning nav-link" href="/login">

@@ -41,7 +41,7 @@ class PostsController extends Controller {
 		$data = request()->validate([
 			'title' => 'required|string|min:3|max:32',
 			'body' => [
-				'required', 'string', 'min:3', 'max:300',
+				'required', 'string', 'min:3',
 			],
 
 			'image' => 'nullable|max:1999|image',
@@ -99,7 +99,7 @@ class PostsController extends Controller {
 		$data = request()->validate([
 			'title' => 'required|string|min:3|max:32|alpha_dash|unique:posts,title,' . $post->id,
 			'body' => [
-				'required', 'string', 'regex:/^[a-zA-Z0-9-_. ]+$/', 'min:3', 'max:300',
+				'required', 'string', 'regex:/^[a-zA-Z0-9-_. ]+$/', 'min:3',
 			],
 
 			'imagePath' => 'nullable|max:1999|image|mimes:png,jpg,jpeg',

@@ -40,29 +40,19 @@ class DoctorController extends Controller
             'last_name' => 'required|max:20',
             'email' => 'required|max:50|email',
             'password' => 'required|max:50',
-            'country_id' => 'required',
-            'job_id' => 'required',
+            'section' => 'required',
             'phone_number' => 'required',
             'hospital_name' => 'required',
         ]);
 
-        // DB::table("doctors")->insert([
-        //   "first_name"=>$request["first_name"],
-        //   "last_name"=>$request["last_name"],
-        //   "email"=>$request["email"],
-        //   "password"=>$request["password"],
-        //   "country_id"=>$request["country_id"],
-        //   "job_id"=>$request["job_id"],
-        //   "phone_number"=>$request["phone_number"],
-        //   "hospital_name"=>$request["hospital_name"],
+ 
 
        $doctors = new doctor();
        $doctors->first_name = $request["first_name"];
        $doctors->last_name = $request["last_name"];
        $doctors->email = $request["email"];
-       $doctors->country_id = $request["country_id"];
        $doctors->password = $request["password"];
-       $doctors->job_id = $request["job_id"];
+       $doctors->section = $request["section"];
        $doctors->phone_number = $request["phone_number"];
        $doctors->hospital_name = $request["hospital_name"];
        $doctors->save();

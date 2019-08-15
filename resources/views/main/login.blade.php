@@ -34,18 +34,18 @@
 
                             
                        
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">حول</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" href="#"> سياسة الخصوصوية  </a>
-                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" a href="#">شروط الاستخدام</a>
-                            </li>
+                                    <a class="nav-link" href="main/about">حول</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/privacy"> سياسة الخصوصوية  </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" a href="/terms">شروط الاستخدام</a>
+                                </li>
                        
                         <li class="nav-item">
-                                <a class="btn btn-primary href=">تسجيل دخول</a>
+                                <a class="btn btn-primary" href="/">تسجيل دخول</a>
 
     
                             </li>
@@ -57,15 +57,16 @@
         <div class="container conAll">
             <div class="row">
                 <div class="offset-lg-7 col-lg-5 formFather py-lg-5 py-2">
-                    <div class="col-md-9 offset-5">
-                            <div class="col-md-6 offset-right-9">
+                    <div class="col-md-12 text-center">
+                            <div class="col-md-12">
 
                                     <span> اختر نوع حسابك</span> 
                                     </div>
+                                    <br>
          <a class="btn btn-primary" href="/register">مستخدم  </a> 
     </div>
     <br>
-    <div class="col-md-3 offset-6">
+    <div class="col-md-12 text-center">
 
     <span> أو</span> 
     </div>
@@ -73,7 +74,7 @@
 
 
 
-     <div class="col-md-3 offset-5">
+     <div class="col-md-12 text-center">
             <a class="btn btn-primary" href="/doctor/register">طبيب </a> 
 
  

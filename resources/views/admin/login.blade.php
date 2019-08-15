@@ -304,7 +304,6 @@ h1{
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="http://images.gofreedownload.net/cac-medical-center-96098.jpg" id="icon" alt="User Icon" />
       <h1>Admin panel</h1>
     </div>
 

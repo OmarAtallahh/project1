@@ -4,7 +4,8 @@
 Article {{ $article->title }}
 @endsection
 
-@section('content')<nav class="navbar navbar-default navbar-fixed-top">
+@section('content')
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -15,10 +16,10 @@ Article {{ $article->title }}
         </button>
         <!-- this route take u to /main/patients -->
         @if(auth('web')->check())
-       <a class="navbar-brand" href="/main/UserMain">الرئيسية</a>
+       <a class="navbar-brand" href="/main/UserMain">الشخصية</a>
 
        @else
-       <a class="navbar-brand" href="/doctor">الرئيسية</a>
+       <a class="navbar-brand" href="/doctor">الشخصية</a>
 
        @endif
       </div>
@@ -26,19 +27,17 @@ Article {{ $article->title }}
         <ul class="nav navbar-nav">
             <li><a href="/posts"> المجتمع </a></li>
             <li><a href="/articles"> المقالات </a></li>
-            <li><a href="#about"> الاحصائيات </a></li>
-            <li><a href="/main/TestData"> الأبحاث</a></li>
+            <li><a href="/statistics"> الاحصائيات </a></li>
             <li><a href="/main/about"> حول </a></li>
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المزيد <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#">أمراض </a></li>
-                <li><a href="#">أطباء</a></li>
+                <li><a href="/view_doctors">أطباء</a></li>
                 <li><a href="/main/createReport">مراسلة إدارة الموقع</a></li>
                 <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li class="dropdown-header">سياسات</li>
+                <li><a href="/privacy">سياسة الخصوصية</a></li>
+                <li><a href="/terms">شروط الاستخدام</a></li>
               </ul>
           </li>
         </ul>
@@ -195,34 +194,35 @@ Article {{ $article->title }}
           </div>
         </div>
 
+
         <!-- Categories Widget -->
         <div class="card my-4">
-          <h5 class="card-header">Categories</h5>
+          <h5 class="card-header">التصنيفات</h5>
           <div class="card-body">
             <div class="row">
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="#">Web Design</a>
+                    <a href="#">طب عام</a>
                   </li>
                   <li>
-                    <a href="#">HTML</a>
+                    <a href="#">جلدية</a>
                   </li>
                   <li>
-                    <a href="#">Freebies</a>
+                    <a href="#">باطنة</a>
                   </li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
                   <li>
-                    <a href="#">JavaScript</a>
+                    <a href="#">سرطان</a>
                   </li>
                   <li>
-                    <a href="#">CSS</a>
+                    <a href="#">ادمان</a>
                   </li>
                   <li>
-                    <a href="#">Tutorials</a>
+                    <a href="#">عيون</a>
                   </li>
                 </ul>
               </div>
@@ -230,17 +230,7 @@ Article {{ $article->title }}
           </div>
         </div>
 
-        <!-- Side Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Side Widget</h5>
-          <div class="card-body">
-            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
-          </div>
-        <div class="row">
-        </div>
-
-      </div>
-
+      
     </div>
     <!-- /.row -->
 

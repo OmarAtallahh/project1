@@ -4,7 +4,9 @@
 About BCR
 @endsection
 
-@section("content")<nav class="navbar navbar-default navbar-fixed-top">
+@section("content")
+<!-- Page Content -->
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -15,30 +17,28 @@ About BCR
         </button>
         <!-- this route take u to /main/patients -->
         @if(auth('web')->check())
-       <a class="navbar-brand" href="/main/UserMain">الرئيسية</a>
-  
+       <a class="navbar-brand" href="/main/UserMain">الشخصية</a>
+
        @else
-       <a class="navbar-brand" href="/doctor">الرئيسية</a>
-       
+       <a class="navbar-brand" href="/doctor">الشخصية</a>
+
        @endif
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
             <li><a href="/posts"> المجتمع </a></li>
             <li><a href="/articles"> المقالات </a></li>
-            <li><a href="#about"> الاحصائيات </a></li>
-            <li><a href="/main/TestData"> الأبحاث</a></li>
+            <li><a href="/statistics"> الاحصائيات </a></li>
             <li><a href="/main/about"> حول </a></li>
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المزيد <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#">أمراض </a></li>
-                <li><a href="#">أطباء</a></li>
+                <li><a href="/view_doctors">أطباء</a></li>
                 <li><a href="/main/createReport">مراسلة إدارة الموقع</a></li>
                 <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li class="dropdown-header">سياسات</li>
+                <li><a href="/privacy">سياسة الخصوصية</a></li>
+                <li><a href="/terms">شروط الاستخدام</a></li>
               </ul>
           </li>
         </ul>
@@ -48,7 +48,7 @@ About BCR
               <div class="dropdown">
                   <button class="dropDownCss btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       @if(auth('web')->check())
-                      
+
                       <a class="nav-link" style="color:#000;text-decoration: none" href="">
                         {{ auth('web')->user()->name }}
                       </a>
@@ -66,16 +66,17 @@ About BCR
                     </li>
                   </ul>
                 </div>
-      
-               
+
+
           </div>
         </div>
         </div>
-  
-  
+
+
       </div><!--/.nav-collapse -->
     </div>
   </nav>
+  <br>
   <br>
       <section class="page-section about-heading">
         <div class="container">
