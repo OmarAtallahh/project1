@@ -19,7 +19,7 @@ About BCR
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/admin/admin/create"> إضافة طبيب</a></li>
-            <li><a href="#">إحصائيات </a></li>
+            <li><a href="/statistics"> الاحصائيات </a></li>
             <li><a href="/admin/admin/reports">التقارير </a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المزيد  <span class="caret"></span></a>
@@ -54,7 +54,7 @@ About BCR
             <div class="col-xl-9 col-lg-10 mx-auto">
               <div class="bg-faded rounded p-5">
                 <h2 class="section-heading mb-4">
-                  <span class="section-heading-upper">إنشاء حساب طبيب جديد </span>
+                  <span class="section-heading-upper">اضافة حساب طبيب جديد </span>
                 </h2>
               </div>
             </div>

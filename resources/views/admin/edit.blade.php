@@ -19,7 +19,7 @@ About BCR
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="/admin/admin/create"> إضافة طبيب</a></li>
-            <li><a href="#">إحصائيات </a></li>
+            <li><a href="/statistics"> الاحصائيات </a></li>
             <li><a href="/admin/admin/reports">التقارير </a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المزيد  <span class="caret"></span></a>
@@ -44,8 +44,7 @@ About BCR
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <br>
-  <br>
+  
       <section class="page-section about-heading">
         <div class="container">
           <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="/casual/img/about.jpg" alt="">
@@ -53,17 +52,16 @@ About BCR
             <div class="row">
               <div class="col-xl-9 col-lg-10 mx-auto">
                 <div class="bg-faded rounded p-5">
-                  <h2 class="section-heading mb-4">
-                    <span class="section-heading-upper">لوحة تحكم المدير </span>
+                  <h3 class="section-heading mb-4">
+                    <span class="section-heading-upper">تحديث بيانات طبيب </span>
                         <hr>
-                  </h2>
-                  <p>
-                تحديث بيانات الطبيب </p>
+                  </h3>
+             
               </div>
             </div>
           </div>
         </div>
-        <br><br>
+        
       </section>
 
       <form action="/admin/admin/{{$doctor->id}}" method="post" class="form-horizontal">
@@ -125,7 +123,7 @@ About BCR
                       </div>
 
 
-                    <br>  <br>
+                    <br> 
                   <div class="form-actions">
                       <button type="submit" class="btn green">تحديث البيانات </button>
                     <a href="/admin/admin">  <button  type="button" class="btn default">إلغاء</button> </a>

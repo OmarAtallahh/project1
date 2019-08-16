@@ -68,7 +68,13 @@ Posts
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">الصفحة الشخصية</a></li>
+                      @if(auth('web')->check())
+                      <li><a href="/main/UserMain">الصفحة الشخصية</a></li>
+               
+                      @else
+                      <a class="navbar-brand" href="/doctor">الشخصية</a>
+               
+                      @endif
                     <li>
                       <a href="/logout">تسجيل خروج <span class="sr-only">(current)</span></a>
                     </li>

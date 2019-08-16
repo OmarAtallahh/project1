@@ -64,7 +64,13 @@ Articles
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="#">الصفحة الشخصية</a></li>
+                      @if(auth('web')->check())
+                      <li><a href="/main/UserMain">الصفحة الشخصية</a></li>
+               
+                      @else
+                      <a class="navbar-brand" href="/doctor">الشخصية</a>
+               
+                      @endif
                     <li>
                       <a href="/logout">تسجيل خروج <span class="sr-only">(current)</span></a>
                     </li>
@@ -122,9 +128,9 @@ Articles
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        <h1 class="my-4">
+        <h3 class="my-4">
           آخر المقالات
-        </h1>
+        </h3>
 <hr>
         @forelse($articles as $article)
         <!-- Blog Post -->
@@ -135,7 +141,7 @@ Articles
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             @endif
             <div class="card-body">
-              <h2 class="card-title">{{ $article->title }}</h2>
+              <h3 class="card-title">{{ $article->title }}</h3>
               <p class="card-text postCss">{!! $article->body !!}</p>
               <a href="{{ route('articles.show' , $article->id) }}" class="btn btn-primary"> تفاصيل المقالة &lArr;</a>
             </div>
