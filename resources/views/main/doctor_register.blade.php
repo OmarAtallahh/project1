@@ -30,10 +30,10 @@
                 <div class="collapse navbar-collapse"
                     id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                          
 
-                            
-                       
+
+
+
                         <li class="nav-item">
                             <a class="nav-link" href="#">حول</a>
                         </li>
@@ -43,18 +43,18 @@
                             <li class="nav-item">
                                 <a class="nav-link" a href="#">شروط الاستخدام</a>
                             </li>
-                        
+
                             <li class="nav-item">
                                     <a class="btn btn-primary href=">تسجيل دخول</a>
-    
-        
+
+
                                 </li>
-                       
+
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
 
         <div class="container conAll">
                 <div class="row">
@@ -62,7 +62,7 @@
                             <form class="form1" method="POST" action="{{ route('doctor_register') }}">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                          لإنشاء حساب طبيب جديد أدخل البيانات التالية 
+                          لإنشاء حساب طبيب جديد أدخل البيانات التالية
                                     </div>
                             <div class="form-group">
                                 <input autocomplete="off" name="first_name" type="text"
@@ -79,7 +79,7 @@
                                     class="form-control"
                                     placeholder="البريد الالكتروني ">
                             </div>
-                            <select  class="form-control" name="country">الدولة 
+                            <select  class="form-control" name="country">الدولة
                                     <option value="JO">الأردن</option>
                                     <option value="AE">الامارات العربية المتحدة</option>
                                     <option value="BH">البحرين</option>
@@ -114,7 +114,7 @@
                                             placeholder="اسم المشفى   ">
                                     </div>
                                     <div class="form-group">
-                                            <input autocomplete="off" name="job_id" type="text"
+                                            <input autocomplete="off" name="section" type="text"
                                                 class="form-control"
                                                 placeholder="التخصص">
                                         </div>
@@ -128,13 +128,13 @@
                                 class="form-control"
                                 placeholder="تاكيد كلمة المرور ">
                         </div>
-      
-      
+
+
                          <!--   <div class="form-group">
                                 <a href="">هل نسيت كلمة المرور ؟</a>
                             </div>  -->
                             <button type="submit" value="Register" class="btn btn-primary">إنشاء الحساب </button>
-                           
+
                         </form>
 
                         <div class="form-group">
@@ -143,7 +143,7 @@
                     </div>
                 </div>
             </div>
-                        
+
 
         <script src="/interface/neww/Untitled/js/jquery.min.js"></script>
         <script src="/interface/neww/Untitled/js/popper.min.js"></script>
