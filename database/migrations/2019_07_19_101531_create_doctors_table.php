@@ -17,8 +17,7 @@ class CreateDoctorsTable extends Migration {
 			$table->string('last_name', 40);
 			$table->string('password', 250);
 			$table->string('email')->unique();
-			$table->bigInteger('job_id');
-			$table->integer('country_id');
+			$table->bigInteger('section');
 			$table->bigInteger('phone_number')->nullable();
 			$table->string('hospital_name', 100);
 			$table->text('about')->nullable();

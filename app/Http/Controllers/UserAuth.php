@@ -46,11 +46,12 @@ class UserAuth extends Controller {
 			'first_name' => 'required|required|min:3',
 			'last_name' => 'required|required|min:3',
 			'email' => 'required|unique:doctors,email',
-			'password' => 'required|min:6|max:20',
-			'confirmed_password' => 'same:password',
 			'phone_number' => 'required',
 			'hospital_name' => 'required',
 			'section' => 'required',
+			'password' => 'required|min:6|max:20',
+			'confirmed_password' => 'same:password',
+
 		];
 
 		// Validate Data

@@ -13,8 +13,9 @@ Posts
 
 
 @section('content')
-<!-- Page Content --><nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
+<!-- Page Content -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
           <span class="sr-only">Toggle navigation</span>
@@ -24,10 +25,10 @@ Posts
         </button>
         <!-- this route take u to /main/patients -->
         @if(auth('web')->check())
-       <a class="navbar-brand" href="/main/UserMain">الرئيسية</a>
+       <a class="navbar-brand" href="/main/UserMain">الشخصية</a>
 
        @else
-       <a class="navbar-brand" href="/doctor">الرئيسية</a>
+       <a class="navbar-brand" href="/doctor">الشخصية</a>
 
        @endif
       </div>
@@ -35,19 +36,17 @@ Posts
         <ul class="nav navbar-nav">
             <li><a href="/posts"> المجتمع </a></li>
             <li><a href="/articles"> المقالات </a></li>
-            <li><a href="#about"> الاحصائيات </a></li>
-            <li><a href="/main/TestData"> الأبحاث</a></li>
+            <li><a href="/statistics"> الاحصائيات </a></li>
             <li><a href="/main/about"> حول </a></li>
             <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">المزيد <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#">أمراض </a></li>
-                <li><a href="#">أطباء</a></li>
+                <li><a href="/view_doctors">أطباء</a></li>
                 <li><a href="/main/createReport">مراسلة إدارة الموقع</a></li>
                 <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li class="dropdown-header">سياسات</li>
+                <li><a href="/privacy">سياسة الخصوصية</a></li>
+                <li><a href="/terms">شروط الاستخدام</a></li>
               </ul>
           </li>
         </ul>
@@ -87,7 +86,6 @@ Posts
   </nav>
   <br>
 
-
   <div class="container">
 
     <div class="row">
@@ -108,6 +106,15 @@ Posts
               <input type="text" class="form-control" name="title">
 
             </div>
+
+            <select class="form-control" name="category">
+                <option value="طب عام">طب عام</option>
+                <option value="جلدية">جلدية</option>
+                <option value="باطنة">باطنة</option>
+                <option value="عيون">عيون</option>
+                <option value="ادمان">ادمان</option>
+                <option value="سرطان">سرطان</option>
+              </select>
 
             <div class="form-group">
 
@@ -141,12 +148,12 @@ Posts
         <!-- Blog Post -->
           <div class="card mb-4">
             @if($post->image)
-            <img class="card-img-top" src="{{ asset( $post->image) }}" alt="Card image cap" width="500" height="400">
+            <img class="card-img-top" src="{{ asset( $post->image) }}" alt="Card image cap" width="700" height="400">
             @else
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             @endif
             <div class="card-body">
-              <h2 class="card-title">{{ $post->title }}</h2>
+              <h2 class="card-title">{{ $post->title }} || <span style="display: inline-block;padding: 15px 45px;line-height: .5;" class="badge"> {{ $post->category }} </span></h2>
               <p class="card-text">{!! $post->body !!}</p>
               <a href="{{ route('posts.show' , $post->id) }}" class="btn btn-primary"> تفاصيل المنشور  &lAarr;</a>
             </div>

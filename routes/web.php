@@ -27,7 +27,17 @@ Route::group(['middleware' => 'notauth'], function () {
 
 	Route::get('/doctor/register', 'UserAuth@getDoctorRegister')->name('doctor_register');
 	Route::post('/doctor/register', 'UserAuth@doctor_register')->name('doctor_register');
-	Route::view('/view_doctors', 'main/viewDoctors');
+
+});
+Route::view('/statistics', '/main/statistics');
+Route::view('/privacy', 'publicviews/privacy_policy');
+Route::view('/terms', 'publicviews/users_terms');
+Route::get('/main/about', 'MainController@tow');
+Route::get('/view_doctors', function () {
+
+	$doctors = App\Doctor::all();
+
+	return view('main.viewDoctors', compact('doctors'));
 
 });
 
@@ -36,7 +46,6 @@ Route::group(['middleware' => 'user'], function () {
 	Route::get('/logout', 'UserAuth@logout')->name('logout');
 
 // Route::get('/main','MainController@index');
-	Route::get('/main/about', 'MainController@tow');
 	Route::get('/main/UserMain', 'MainController@four');
 
 // Route::get('/main/index','MainController@interface');

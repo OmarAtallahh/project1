@@ -33,7 +33,6 @@
 
 
 
-
                         <li class="nav-item">
                             <a class="nav-link" href="#">حول</a>
                         </li>
@@ -49,6 +48,25 @@
 
 
                                 </li>
+
+
+
+                            <li class="nav-item">
+                                    <a class="nav-link" href="main/about">حول</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/privacy"> سياسة الخصوصوية  </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" a href="/terms">شروط الاستخدام</a>
+                                </li>
+
+                                <li class="nav-item">
+                                        <a class="btn btn-primary" href="/">تسجيل دخول</a>
+
+
+                                    </li>
+
 
                     </ul>
                 </div>
@@ -79,6 +97,7 @@
                                     class="form-control"
                                     placeholder="البريد الالكتروني ">
                             </div>
+<<<<<<< HEAD
                             <select  class="form-control" name="country">الدولة
                                     <option value="JO">الأردن</option>
                                     <option value="AE">الامارات العربية المتحدة</option>
@@ -101,6 +120,10 @@
                                     <option value="EG">مصر</option>
                                 </select>
                                     <br>
+=======
+
+
+>>>>>>> c4ed33794715960cf56b441abff0971006692772
 
 
                             <div class="form-group">
