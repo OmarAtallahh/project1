@@ -30,9 +30,27 @@
                 <div class="collapse navbar-collapse"
                     id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                          
 
-                            
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">حول</a>
+                        </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="#"> سياسة الخصوصوية  </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" a href="#">شروط الاستخدام</a>
+                            </li>
+
+                            <li class="nav-item">
+                                    <a class="btn btn-primary href=">تسجيل دخول</a>
+
+
+                                </li>
+
+
+
                             <li class="nav-item">
                                     <a class="nav-link" href="main/about">حول</a>
                                 </li>
@@ -42,18 +60,19 @@
                                 <li class="nav-item">
                                     <a class="nav-link" a href="/terms">شروط الاستخدام</a>
                                 </li>
-                        
+
                                 <li class="nav-item">
                                         <a class="btn btn-primary" href="/">تسجيل دخول</a>
-        
-            
+
+
                                     </li>
-                       
+
+
                     </ul>
                 </div>
             </div>
         </nav>
-        
+
 
         <div class="container conAll">
                 <div class="row">
@@ -61,7 +80,7 @@
                             <form class="form1" method="POST" action="{{ route('doctor_register') }}">
                                     {{ csrf_field() }}
                                     <div class="form-group">
-                          لإنشاء حساب طبيب جديد أدخل البيانات التالية 
+                          لإنشاء حساب طبيب جديد أدخل البيانات التالية
                                     </div>
                             <div class="form-group">
                                 <input autocomplete="off" name="first_name" type="text"
@@ -78,8 +97,33 @@
                                     class="form-control"
                                     placeholder="البريد الالكتروني ">
                             </div>
-                         
-                                  
+<<<<<<< HEAD
+                            <select  class="form-control" name="country">الدولة
+                                    <option value="JO">الأردن</option>
+                                    <option value="AE">الامارات العربية المتحدة</option>
+                                    <option value="BH">البحرين</option>
+                                    <option value="DZ">الجزائر</option>
+                                    <option value="SD">السودان</option>
+                                    <option value="SO">الصومال</option>
+                                    <option value="IQ">العراق</option>
+                                    <option value="KW">الكويت</option>
+                                    <option value="MA">المغرب</option>
+                                    <option value="SA">المملكة العربية السعودية</option>
+                                    <option value="YE">اليمن</option>
+                                    <option value="TN">تونس</option>
+                                    <option value="SY">سوريا</option>
+                                    <option value="OM">عمان</option>
+                                    <option value="PS">فلسطين</option>
+                                    <option value="QA">قطر</option>
+                                    <option value="LB">لبنان</option>
+                                    <option value="LY">ليبيا</option>
+                                    <option value="EG">مصر</option>
+                                </select>
+                                    <br>
+=======
+
+
+>>>>>>> c4ed33794715960cf56b441abff0971006692772
 
 
                             <div class="form-group">
@@ -93,7 +137,7 @@
                                             placeholder="اسم المشفى   ">
                                     </div>
                                     <div class="form-group">
-                                            <input autocomplete="off" name="job_id" type="text"
+                                            <input autocomplete="off" name="section" type="text"
                                                 class="form-control"
                                                 placeholder="التخصص">
                                         </div>
@@ -107,13 +151,13 @@
                                 class="form-control"
                                 placeholder="تاكيد كلمة المرور ">
                         </div>
-      
-      
+
+
                          <!--   <div class="form-group">
                                 <a href="">هل نسيت كلمة المرور ؟</a>
                             </div>  -->
                             <button type="submit" value="Register" class="btn btn-primary">إنشاء الحساب </button>
-                           
+
                         </form>
 
                         <div class="form-group">
@@ -122,7 +166,7 @@
                     </div>
                 </div>
             </div>
-                        
+
 
         <script src="/interface/neww/Untitled/js/jquery.min.js"></script>
         <script src="/interface/neww/Untitled/js/popper.min.js"></script>

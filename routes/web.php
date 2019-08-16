@@ -28,14 +28,18 @@ Route::group(['middleware' => 'notauth'], function () {
 	Route::get('/doctor/register', 'UserAuth@getDoctorRegister')->name('doctor_register');
 	Route::post('/doctor/register', 'UserAuth@doctor_register')->name('doctor_register');
 
-
 });
 Route::view('/statistics', '/main/statistics');
 Route::view('/privacy', 'publicviews/privacy_policy');
 Route::view('/terms', 'publicviews/users_terms');
 Route::get('/main/about', 'MainController@tow');
-Route::view('/view_doctors', 'main/viewDoctors');
+Route::get('/view_doctors', function () {
 
+	$doctors = App\Doctor::all();
+
+	return view('main.viewDoctors', compact('doctors'));
+
+});
 
 Route::group(['middleware' => 'user'], function () {
 

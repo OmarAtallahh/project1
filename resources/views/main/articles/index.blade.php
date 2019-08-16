@@ -105,6 +105,19 @@ Articles
 
             <div class="form-group">
 
+              <select class="form-control" name="category">
+                <option value="طب عام">طب عام</option>
+                <option value="جلدية">جلدية</option>
+                <option value="باطنة">باطنة</option>
+                <option value="عيون">عيون</option>
+                <option value="ادمان">ادمان</option>
+                <option value="سرطان">سرطان</option>
+              </select>
+
+            </div>
+
+            <div class="form-group">
+
 
               <textarea name="body" class="form-control"></textarea>
 
@@ -124,7 +137,7 @@ Articles
 
       @endif
 
-       
+
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
@@ -141,7 +154,9 @@ Articles
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             @endif
             <div class="card-body">
-              <h3 class="card-title">{{ $article->title }}</h3>
+              <h2 class="card-title">{{ $article->title }} || <span style="display: inline-block;padding: 15px 45px;line-height: .5;" class="badge"> {{ $article->category }} </span>
+
+              </h2>
               <p class="card-text postCss">{!! $article->body !!}</p>
               <a href="{{ route('articles.show' , $article->id) }}" class="btn btn-primary"> تفاصيل المقالة &lArr;</a>
             </div>
@@ -213,7 +228,7 @@ Articles
 
   </div>
 
-    
+
 
     </div>
     <!-- /.row -->

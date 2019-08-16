@@ -37,7 +37,7 @@ class UserAuth extends Controller {
 
 		auth('web')->login($user);
 
-		return view('main.UserMain')->with('success', 'Logged In');
+		return redirect('/main/UserMain');
 	}
 
 	function doctor_register(Request $request) {
@@ -51,7 +51,9 @@ class UserAuth extends Controller {
 			'section' => 'required',
 			'password' => 'required|min:6|max:20',
 			'confirmed_password' => 'same:password',
+
 		];
+
 		// Validate Data
 		$data = request()->validate($rules);
 
@@ -61,7 +63,7 @@ class UserAuth extends Controller {
 
 		auth('doctor')->login($user);
 
-		return view('main.patients')->with('success', 'Logged In');
+		return redirect('/main/UserMain');
 	}
 
 	function getLogin(Request $request) {

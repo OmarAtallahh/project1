@@ -114,7 +114,17 @@ About BCR
                                   @if(auth('web')->check())
                                             <li>
                                                 <a href="javascript:;"> عدد المنشورات
-                                                    <span> 3 </span>
+                                                    <span>
+                                                      @if($user->posts )
+                                                        {{ $user->posts()->count() }}
+                                                      @elseif($user->articles )
+                                                        {{ $user->articles()->count() }}
+
+                                                      @else
+                                                        0
+                                                      @endif
+
+                                                    </span>
                                                 </a>
                                             </li>
                                     @else
@@ -131,8 +141,9 @@ About BCR
                           <div class="col-md-9">
                               <div class="row">
                                   <div class="col-md-8 profile-info">
-                                      <h1 class="font-green sbold uppercase">John Doe</h1>
-                                      <textarea id="textareaID" disabled rows="6" class="form-control textareaCss">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt laoreet dolore magna aliquam tincidunt erat volutpat laoreet dolore magna aliquam tincidunt erat volutpat</textarea>
+                                      <h1 class="font-green sbold uppercase">{{ $user->name }}</h1>
+
+                                      <textarea id="textareaID" disabled rows="6" class="form-control textareaCss">{{ $user->about }}</textarea>
                                       <button class="btn btn-primary" id="editID">
                                         <i class="fa faEdit fa-edit fa-2x"></i>
                                         <i class="fa faCheck fa-check fa-2x"></i>

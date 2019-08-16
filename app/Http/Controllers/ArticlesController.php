@@ -45,6 +45,7 @@ class ArticlesController extends Controller {
 			],
 
 			'image' => 'nullable|max:1999|image',
+			'category' => 'required',
 		]);
 
 		if (request()->hasFile('image')) {

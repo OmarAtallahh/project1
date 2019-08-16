@@ -11,7 +11,7 @@ Posts
    $('.textarea').wysihtml5();
 </script>
 @endsection
- 
+
 
 @section('content')
 
@@ -101,75 +101,31 @@ Posts
 <div class="contaner" style="padding: 0 225px">
   <div class="row">
       <div class="col-md-12">
-              <div class=" col-md-3">
-                <div class="thumbnail">
-                  <img src="..." alt="...">
-                  <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>Thumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail label</p>
-                    <p><a href="#" class="btn btn-primary" role="button">مراسلة</a> </p>
-                  </div>
-                </div>
-              </div>
-            
 
-      
-        <div class="col-md-3">
+        @foreach($doctors as $doctor)
+        <div class="col-md-4" style="width: 260px;height: 300px;">
           <div class="thumbnail">
-            <img src="..." alt="...">
+            @if($doctor->image)
+            <img src="{{ asset('image/' . $doctor->image) }}" alt="...">
+            @else
+            <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+
+            @endif
+
             <div class="caption">
-              <h3>Thumbnail label</h3>
-              <p>Thumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail label</p>
+              <h3 style="word-break: break-all;">{{ $doctor->name }}</h3>
+              <p>{{ $doctor->about }}</p>
               <p><a href="#" class="btn btn-primary" role="button">مراسلة</a> </p>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-            <div class="thumbnail">
-              <img src="..." alt="...">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>Thumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail label</p>
-                <p><a href="#" class="btn btn-primary" role="button">مراسلة</a> </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-              <div class="thumbnail">
-                <img src="..." alt="...">
-                <div class="caption">
-                  <h3>Thumbnail label</h3>
-                  <p>Thumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail label</p>
-                  <p><a href="#" class="btn btn-primary" role="button">مراسلة</a> </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-                <div class="thumbnail">
-                  <img src="..." alt="...">
-                  <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>Thumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail label</p>
-                    <p><a href="#" class="btn btn-primary" role="button">مراسلة</a> </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                  <div class="thumbnail">
-                    <img src="..." alt="...">
-                    <div class="caption">
-                      <h3>Thumbnail label</h3>
-                      <p>Thumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail labelThumbnail label</p>
-                      <p><a href="#" class="btn btn-primary" role="button">مراسلة</a> </p>
-                    </div>
-                  </div>
-                </div>
-                            
-           
+       @endforeach
+
+
       </div>
-      
-         
-        
+
+
+
 
   </div>
 </div>

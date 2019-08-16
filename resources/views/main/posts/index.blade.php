@@ -113,6 +113,15 @@ Posts
 
             </div>
 
+            <select class="form-control" name="category">
+                <option value="طب عام">طب عام</option>
+                <option value="جلدية">جلدية</option>
+                <option value="باطنة">باطنة</option>
+                <option value="عيون">عيون</option>
+                <option value="ادمان">ادمان</option>
+                <option value="سرطان">سرطان</option>
+              </select>
+
             <div class="form-group">
 
 
@@ -150,7 +159,7 @@ Posts
             <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
             @endif
             <div class="card-body">
-              <h2 class="card-title">{{ $post->title }}</h2>
+              <h2 class="card-title">{{ $post->title }} || <span style="display: inline-block;padding: 15px 45px;line-height: .5;" class="badge"> {{ $post->category }} </span></h2>
               <p class="card-text">{!! $post->body !!}</p>
               <a href="{{ route('posts.show' , $post->id) }}" class="btn btn-primary"> تفاصيل المنشور  &lAarr;</a>
             </div>
